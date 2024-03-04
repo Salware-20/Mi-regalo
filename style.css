@@ -1,0 +1,102 @@
+body {
+    color: aliceblue;
+    padding: 0;
+    margin: 0;
+    background: #415a77;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('Minecraft.ttf');
+}
+
+.home {
+    text-align: center; 
+    padding: 20px; 
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 3em;
+    color: #6caddf;
+}
+h3 {
+    font-size: 1.5em;
+    color: #88d7de;
+}
+pre {
+    text-align: unset;
+    font-family: 'Minecraft', monospace;
+    font-size: 1.2em;
+    white-space: pre-wrap;
+}
+
+.rain-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+@keyframes animacion {
+    0% {
+        transform: translate(var(--x-start), var(--y-start))rotate(0);
+    } 100% {
+        transform: translate(var(--x-end), var(--y-end))rotate(50deg);
+    }
+}
+
+.rainDrop {
+    font-size: var(--sz);
+    filter: blur(var(--blur));
+    animation: animacion 20s linear infinite;
+    transform: translate(var(--x-start), -15vh) rotate(0);
+    opacity: var(--a);
+}
+
+.rainDrop--s {
+    --sz: 1rem;
+    --blur: 2px;
+    --a: 0.8;
+    --x-start: 50vw;
+    --x-end: 0vw;
+    --y-start: 0;
+    --y-end: 100vh;
+    position: absolute;
+}
+
+.rainDrop--m {
+    --sz: 2rem;
+    --blur: 1.6px;
+    --a: 0.8;
+    --x-start: 50vw;
+    --x-end: 0vw;
+    --y-start: 0;
+    --y-end: 100vh;
+    position: absolute;
+    z-index: 50;
+}
+
+.rainDrop--l {
+    --sz: 3rem;
+    --blur: 0px;
+    --a: 0.8;
+    --x-start: 50vw;
+    --x-end: 0vw;
+    --y-start: 0;
+    --y-end: 100vh;
+    position: absolute;
+    z-index: 80;
+}
+
+.rainDrop--xl {
+    --sz: 6rem;
+    --blur: 4px;
+    --a: 0.5;
+    --x-start: 50vw;
+    --x-end: 0vw;
+    --y-start: 0;
+    --y-end: 100vh;
+    position: absolute;
+    z-index: 100;
+}
